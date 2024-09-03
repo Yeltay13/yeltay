@@ -1,0 +1,46 @@
+<nav class="bg-[#0f0830] pt-4 pb-4">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+      <div class="flex items-center">
+        <!-- Round Placeholder Astro Logo -->
+        <img class="h-16 w-16 rounded-full" src="/assets/y_boost_logo_white.svg" alt="Y-Boost logo">
+        <span class="ml-3 text-gray-300 text-xl font-semibold">Y-Boost</span>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+        <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 text-gray-300 hover:text-gray-100 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="hidden sm:flex space-x-4 ml-auto">
+        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-[#0F4C75] hover:text-gray-300 active:bg-[#3282B8]">Home</a>
+        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-[#0F4C75] hover:text-gray-300 active:bg-[#3282B8]">Features</a>
+        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-[#0F4C75] hover:text-gray-300 active:bg-[#3282B8]">Testimonials</a>
+        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-[#0F4C75] hover:text-gray-300 active:bg-[#3282B8]">Pricing</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="sm:hidden bg-[#0f0830] text-gray-300 hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium hover:bg-[#0F4C75] hover:text-gray-300 active:bg-[#3282B8]">Home</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium hover:bg-[#0F4C75] hover:text-gray-300 active:bg-[#3282B8]">Features</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium hover:bg-[#0F4C75] hover:text-gray-300 active:bg-[#3282B8]">Testimonials</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium hover:bg-[#0F4C75] hover:text-gray-300 active:bg-[#3282B8]">Pricing</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Script to toggle mobile menu -->
+<script>
+  document.getElementById('mobile-menu-button').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
