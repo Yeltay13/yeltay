@@ -1,46 +1,192 @@
-<section id="pricing" class="bg-[#0f0830] text-white py-20">
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+---
+<Layout title="Pricing">
+  <section id="pricing" class="bg-[#0f0830] text-[#d3d2e5] py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-extrabold text-[#d3d2e5]">Pricing Plans</h2>
         <p class="mt-4 text-lg text-[#d3d2e5]">Choose the plan that fits your needs.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <!-- Pricing Option 1 -->
-        <div class="bg-[#1c0f57] text-white p-8 rounded-lg shadow-lg">
-          <h3 class="text-2xl font-bold mb-4">Basic Plan</h3>
-          <p class="text-4xl font-extrabold mb-4">$19<span class="text-lg">/mo</span></p>
-          <ul class="mb-6 space-y-2">
-            <li>10 Features</li>
-            <li>5 Users</li>
-            <li>24/7 Support</li>
-          </ul>
-          <a href="#" class="bg-[#58256f] text-white py-2 px-6 rounded-lg inline-block hover:bg-[#1a5a8c] transition">Get Started</a>
-        </div>
-  
-        <!-- Pricing Option 2 -->
-        <div class="bg-[#1c0f57] text-white p-8 rounded-lg shadow-lg">
+        <!-- Standard Plan -->
+        <div class="bg-[#1c0f57] text-[#d3d2e5] p-8 rounded-lg shadow-lg">
           <h3 class="text-2xl font-bold mb-4">Standard Plan</h3>
-          <p class="text-4xl font-extrabold mb-4">$49<span class="text-lg">/mo</span></p>
+          <p class="text-4xl font-extrabold mb-4">$50<span class="text-lg">/1:1 session</span></p>
           <ul class="mb-6 space-y-2">
-            <li>30 Features</li>
-            <li>20 Users</li>
-            <li>24/7 Support</li>
+            <li>
+              <div class="flex items-center justify-between cursor-pointer" onclick="toggleContent('general')">
+                <Icon name="general-english" class="w-5 h-5 text-[#d3d2e5]" />
+                <span class="font-semibold">General English</span>
+                <svg id="general-arrow" class="w-5 h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              <ul id="general-content" class="mt-2 hidden space-y-2 pl-5">
+                <li>55% of online content is in English.</li>
+                <li>75% of international tourists speak English.</li>
+                <li>40% of top universities use English.</li>
+                <li>30% of books, 40% of films, and much music are in English.</li>
+                <li>English connects ~1.5 billion people.</li>
+              </ul>
+            </li>
+            <li>
+              <div class="flex items-center justify-between cursor-pointer" onclick="toggleContent('telegram')">
+                <Icon name="telegram-community" class="w-5 h-5 text-[#d3d2e5]" />
+                <span class="font-semibold">Telegram Community</span>
+                <svg id="telegram-arrow" class="w-5 h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              <ul id="telegram-content" class="mt-2 hidden space-y-2 pl-5">
+                <li>🗣️ Learn English through daily posts</li>
+                <li>💼 Discuss work and relocation</li>
+                <li>🌟 Share your projects</li>
+                <li>🎲 Play board games</li>
+                <li>👥 Chat about daily life activities</li>
+              </ul>
+            </li>
           </ul>
-          <a href="#" class="bg-[#58256f] text-white py-2 px-6 rounded-lg inline-block hover:bg-[#1a5a8c] transition">Get Started</a>
+          <a href="#" class="bg-[#58256f] text-[#d3d2e5] py-2 px-6 rounded-lg inline-block hover:bg-[#1a5a8c] transition">Get Started</a>
         </div>
-  
-        <!-- Pricing Option 3 -->
-        <div class="bg-[#1c0f57] text-white p-8 rounded-lg shadow-lg">
+
+        <!-- Premium Plan -->
+        <div class="bg-[#1c0f57] text-[#d3d2e5] p-8 rounded-lg shadow-lg">
           <h3 class="text-2xl font-bold mb-4">Premium Plan</h3>
-          <p class="text-4xl font-extrabold mb-4">$99<span class="text-lg">/mo</span></p>
+          <p class="text-4xl font-extrabold mb-4">$70<span class="text-lg">/1:1 session</span></p>
           <ul class="mb-6 space-y-2">
-            <li>Unlimited Features</li>
-            <li>Unlimited Users</li>
-            <li>Priority Support</li>
+            <li>
+                <div class="flex items-center justify-between cursor-pointer" onclick="toggleContent('general')">
+                  <Icon name="general-english" class="w-5 h-5 text-[#d3d2e5]" />
+                  <span class="font-semibold">General English</span>
+                  <svg id="general-arrow" class="w-5 h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+                <ul id="general-content" class="mt-2 hidden space-y-2 pl-5">
+                  <li>55% of online content is in English.</li>
+                  <li>75% of international tourists speak English.</li>
+                  <li>40% of top universities use English.</li>
+                  <li>30% of books, 40% of films, and much music are in English.</li>
+                  <li>English connects ~1.5 billion people.</li>
+                </ul>
+              </li>
+              <li>
+                <div class="flex items-center justify-between cursor-pointer" onclick="toggleContent('telegram')">
+                  <Icon name="telegram-community" class="w-5 h-5 text-[#d3d2e5]" />
+                  <span class="font-semibold">Telegram Community</span>
+                  <svg id="telegram-arrow" class="w-5 h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+                <ul id="telegram-content" class="mt-2 hidden space-y-2 pl-5">
+                  <li>🗣️ Learn English through daily posts</li>
+                  <li>💼 Discuss work and relocation</li>
+                  <li>🌟 Share your projects</li>
+                  <li>🎲 Play board games</li>
+                  <li>👥 Chat about daily life activities</li>
+                </ul>
+              </li>
+            <li>
+              <div class="flex items-center justify-between cursor-pointer" onclick="toggleContent('it')">
+                <Icon name="english-for-it" class="w-5 h-5 text-[#d3d2e5]" />
+                <span class="font-semibold">English for IT</span>
+                <svg id="it-arrow" class="w-5 h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              <ul id="it-content" class="mt-2 hidden space-y-2 pl-5">
+                <li>English speakers earn 30% more.</li>
+                <li>60% of multinational companies require English.</li>
+                <li>English can expand your professional network by 30%.</li>
+              </ul>
+            </li>
+            <li>
+              <div class="flex items-center justify-between cursor-pointer" onclick="toggleContent('interview')">
+                <Icon name="job-interview" class="w-5 h-5 text-[#d3d2e5]" />
+                <span class="font-semibold">Job Interview Preparation</span>
+                <svg id="interview-arrow" class="w-5 h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              <ul id="interview-content" class="mt-2 hidden space-y-2 pl-5">
+                <li>60%-70% of job candidates fail due to poor soft skills.</li>
+                <li>57% are rejected for lack of soft skills (LinkedIn Survey).</li>
+                <li>Soft skills impact 75% of hiring decisions (Harvard Business Review).</li>
+              </ul>
+            </li>
+            <li>
+              <div class="flex items-center justify-between cursor-pointer" onclick="toggleContent('cv')">
+                <Icon name="cv-cover-letter" class="w-5 h-5 text-[#d3d2e5]" />
+                <span class="font-semibold">CV and Cover Letter</span>
+                <svg id="cv-arrow" class="w-5 h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              <ul id="cv-content" class="mt-2 hidden space-y-2 pl-5">
+                <li>40%-60% of applicants are declined due to poor CVs and cover letters.</li>
+                <li>45% of recruiters reject candidates for this reason (Jobvite).</li>
+                <li>58% of hiring managers cite this as a key factor (CareerBuilder).</li>
+              </ul>
+            </li>
+            <li>
+              <div class="flex items-center justify-between cursor-pointer" onclick="toggleContent('ielts')">
+                <Icon name="ielts" class="w-5 h-5 text-[#d3d2e5]" />
+                <span class="font-semibold">IELTS Preparation</span>
+                <svg id="ielts-arrow" class="w-5 h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              <ul id="ielts-content" class="mt-2 hidden space-y-2 pl-5">
+                <li>25% report increased salary from improved language skills.</li>
+                <li>50% see career growth with strong IELTS scores.</li>
+                <li>60% of immigration authorities use IELTS for visas.</li>
+              </ul>
+            </li>
           </ul>
-          <a href="#" class="bg-[#58256f] text-white py-2 px-6 rounded-lg inline-block hover:bg-[#1a5a8c] transition">Get Started</a>
+          <a href="#" class="bg-[#58256f] text-[#d3d2e5] py-2 px-6 rounded-lg inline-block hover:bg-[#1a5a8c] transition">Get Started</a>
+        </div>
+
+        <!-- Corporate Plan -->
+        <div class="bg-[#1c0f57] text-[#d3d2e5] p-8 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold mb-4">Corporate Plan</h3>
+          <p class="text-4xl font-extrabold mb-4">Custom Pricing</p>
+          <ul class="mb-6 space-y-2">
+            <li><strong>Includes everything in the Premium Plan, with custom features tailored to your organization.</strong></li>
+            <li>
+              <div class="flex items-center justify-between cursor-pointer" onclick="toggleContent('corporate')">
+                <span class="font-semibold">Tailored English Training</span>
+                <svg id="corporate-arrow" class="w-5 h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              <ul id="corporate-content" class="mt-2 hidden space-y-2 pl-5">
+                <li>Customized training programs for teams and organizations.</li>
+                <li>Flexible scheduling and content tailored to business needs.</li>
+                <li>In-depth workshops and group sessions available.</li>
+              </ul>
+            </li>
+          </ul>
+          <a href="#" class="bg-[#58256f] text-[#d3d2e5] py-2 px-6 rounded-lg inline-block hover:bg-[#1a5a8c] transition">Get Started</a>
         </div>
       </div>
     </div>
   </section>
-  
+
+  <script type="module">
+    function toggleContent(id) {
+      const content = document.getElementById(`${id}-content`);
+      const arrow = document.getElementById(`${id}-arrow`);
+      const isVisible = content.classList.contains('block');
+
+      document.querySelectorAll('[id$="-content"]').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('[id$="-arrow"]').forEach(el => el.classList.remove('rotate-180'));
+
+      if (!isVisible) {
+        content.classList.remove('hidden');
+        arrow.classList.add('rotate-180');
+      }
+    }
+  </script>
+</Layout>

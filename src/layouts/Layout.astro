@@ -18,6 +18,10 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+		<script type="module">
+			import { toggleContent } from '/scripts/toggleContent.js';
+			window.toggleContent = toggleContent;  // Expose function globally
+		</script>
 	</body>
 </html>
 <style is:global>
