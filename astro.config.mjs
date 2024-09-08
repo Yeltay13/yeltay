@@ -4,6 +4,18 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  base: "/y-boost/", // Set this to your repo name
+  site: "https://yeltay13.github.io",
+  base: "/y-boost/", // Ensure this matches your GitHub repo name
   integrations: [tailwind(), icon()],
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: (assetInfo) => {
+            return `assets/${assetInfo.name}`;
+          },
+        },
+      },
+    },
+  },
 });
