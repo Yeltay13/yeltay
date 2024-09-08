@@ -1,74 +1,204 @@
+---
+const testimonials1 = [
+  {
+    name: "Irina Atroshonok",
+    title: "QA Engineer",
+    image: "/public/assets/irina_at.jpeg",
+    video: "/assets/testimonial-irina.mp4",
+  },
+  {
+    name: "Client 2",
+    title: "Job Title",
+    image: "https://via.placeholder.com/100",
+    quote: "I can't imagine going back to the way things were before Y-Boost. It's an essential tool for any business.",
+  },
+  {
+    name: "Client 3",
+    title: "Job Title",
+    image: "https://via.placeholder.com/100",
+    quote: "The customer service is amazing, and the product just works. We've seen incredible results with Y-Boost.",
+  },
+  {
+    name: "Client 4",
+    title: "Job Title",
+    image: "https://via.placeholder.com/100",
+    quote: "Y-Boost's innovative approach has been a game-changer for our team. We highly recommend it to others.",
+  },
+  {
+    name: "Client 5",
+    title: "Job Title",
+    image: "https://via.placeholder.com/100",
+    quote: "An indispensable tool with exceptional support. Y-Boost has exceeded our expectations.",
+  },
+  {
+    name: "Client 6",
+    title: "Job Title",
+    image: "https://via.placeholder.com/100",
+    quote: "Y-Boost has streamlined our processes and delivered impressive results. The ROI has been remarkable.",
+  },
+];
+
+const testimonials2 = [
+  {
+    name: "Client 7",
+    title: "Job Title",
+    image: "https://via.placeholder.com/100",
+    video: "/assets/testimonial-irina.mp4",  // This client uses a video
+  },
+  {
+    name: "Client 8",
+    title: "Job Title",
+    image: "https://via.placeholder.com/100",
+    quote: "The support from Y-Boost is truly amazing.",
+  },
+  {
+    name: "Client 9",
+    title: "Job Title",
+    image: "https://via.placeholder.com/100",
+    quote: "The support from Y-Boost is truly amazing.",
+  },
+  {
+    name: "Client 10",
+    title: "Job Title",
+    image: "https://via.placeholder.com/100",
+    quote: "The support from Y-Boost is truly amazing.",
+  },
+  {
+    name: "Client 11",
+    title: "Job Title",
+    image: "https://via.placeholder.com/100",
+    quote: "The support from Y-Boost is truly amazing.",
+  },
+  {
+    name: "Client 12",
+    title: "Job Title",
+    image: "https://via.placeholder.com/100",
+    quote: "The support from Y-Boost is truly amazing.",
+  },
+];
+---
+
 <section id="testimonials" class="bg-[#0f0830] text-gray-300 py-20">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-extrabold">What Our Clients Say</h2>
-      <p class="mt-4 text-lg text-gray-300">Hear from our satisfied customers.</p>
+      <h2 class="text-3xl font-extrabold">Testimonials</h2>
+      <p class="mt-4 text-lg text-gray-300">What our clients are saying about Y-Boost.</p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Testimonial 1 -->
-      <div class="bg-[#58256f] p-6 rounded-lg shadow-lg">
-        <div class="flex items-start">
-          <img class="h-16 w-16 rounded-full" src="/public/assets/irina_at.jpeg" alt="Client 1">
-          <div class="ml-4">
-            <h3 class="text-xl font-semibold">Irina Atroshonok</h3>
-            <p class="text-gray-300">QA Engineer</p>
+
+    <!-- Testimonials Sets -->
+    <div id="testimonial-set-1" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-500 ease-in-out opacity-100">
+      {testimonials1.map(testimonial => (
+        <div class="bg-[#58256f] p-6 rounded-lg shadow-lg" key={testimonial.name}>
+          <div class="flex items-start">
+            <img class="h-16 w-16 rounded-full" src={testimonial.image} alt={testimonial.name} loading="lazy" />
+            <div class="ml-4">
+              <h3 class="text-xl font-semibold">{testimonial.name}</h3>
+              <p class="text-gray-300">{testimonial.title}</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            {testimonial.video ? (
+              <video class="w-full rounded-md" controls loading="lazy">
+                <source src={testimonial.video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <p class="text-gray-300">{testimonial.quote}</p>
+            )}
           </div>
         </div>
-        <p class="mt-4 text-gray-300">"Y-Boost has completely transformed our business. The features are top-notch, and the support is outstanding!"</p>
-      </div>
-      <!-- Testimonial 2 -->
-      <div class="bg-[#58256f] p-6 rounded-lg shadow-lg">
-        <div class="flex items-start">
-          <img class="h-16 w-16 rounded-full" src="https://via.placeholder.com/100" alt="Client 2">
-          <div class="ml-4">
-            <h3 class="text-xl font-semibold">Client 2</h3>
-            <p class="text-gray-300">Job Title</p>
+      ))}
+    </div>
+
+    <div id="testimonial-set-2" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-500 ease-in-out opacity-0 hidden">
+      {testimonials2.map(testimonial => (
+        <div class="bg-[#58256f] p-6 rounded-lg shadow-lg" key={testimonial.name}>
+          <div class="flex items-start">
+            <img class="h-16 w-16 rounded-full" src={testimonial.image} alt={testimonial.name} loading="lazy" />
+            <div class="ml-4">
+              <h3 class="text-xl font-semibold">{testimonial.name}</h3>
+              <p class="text-gray-300">{testimonial.title}</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            {testimonial.video ? (
+              <video class="w-full rounded-md" controls loading="lazy">
+                <source src={testimonial.video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <p class="text-gray-300">{testimonial.quote}</p>
+            )}
           </div>
         </div>
-        <p class="mt-4 text-gray-300">"I can't imagine going back to the way things were before Y-Boost. It's an essential tool for any business."</p>
+      ))}
+    </div>
+
+    <!-- Carousel Controls (Dots and Arrows) -->
+    <div class="flex justify-center items-center mt-8">
+      <!-- Left Arrow -->
+      <button
+        class="text-white text-xl px-4 py-2 hover:bg-[#452355] rounded-full"
+        onclick="window.prevTestimonialSet()"
+      >
+        &#8592;
+      </button>
+
+      <!-- Dots -->
+      <div class="flex space-x-3 mx-4">
+        <span class="dot w-4 h-4 bg-white rounded-full cursor-pointer" onclick="window.showTestimonialSet(0)"></span>
+        <span class="dot w-4 h-4 bg-gray-400 rounded-full cursor-pointer" onclick="window.showTestimonialSet(1)"></span>
       </div>
-      <!-- Testimonial 3 -->
-      <div class="bg-[#58256f] p-6 rounded-lg shadow-lg">
-        <div class="flex items-start">
-          <img class="h-16 w-16 rounded-full" src="https://via.placeholder.com/100" alt="Client 3">
-          <div class="ml-4">
-            <h3 class="text-xl font-semibold">Client 3</h3>
-            <p class="text-gray-300">Job Title</p>
-          </div>
-        </div>
-        <p class="mt-4 text-gray-300">"The customer service is amazing, and the product just works. We've seen incredible results with Y-Boost."</p>
-      </div>
-      <!-- Testimonial 4 -->
-      <div class="bg-[#58256f] p-6 rounded-lg shadow-lg">
-        <div class="flex items-start">
-          <img class="h-16 w-16 rounded-full" src="https://via.placeholder.com/100" alt="Client 4">
-          <div class="ml-4">
-            <h3 class="text-xl font-semibold">Client 4</h3>
-            <p class="text-gray-300">Job Title</p>
-          </div>
-        </div>
-        <p class="mt-4 text-gray-300">"Y-Boost's innovative approach has been a game-changer for our team. We highly recommend it to others."</p>
-      </div>
-      <!-- Testimonial 5 -->
-      <div class="bg-[#58256f] p-6 rounded-lg shadow-lg">
-        <div class="flex items-start">
-          <img class="h-16 w-16 rounded-full" src="https://via.placeholder.com/100" alt="Client 5">
-          <div class="ml-4">
-            <h3 class="text-xl font-semibold">Client 5</h3>
-            <p class="text-gray-300">Job Title</p>
-          </div>
-        </div>
-        <p class="mt-4 text-gray-300">"An indispensable tool with exceptional support. Y-Boost has exceeded our expectations."</p>
-      </div>
-      <!-- Testimonial 6 -->
-      <div class="bg-[#58256f] p-6 rounded-lg shadow-lg">
-        <div class="flex items-start">
-          <img class="h-16 w-16 rounded-full" src="https://via.placeholder.com/100" alt="Client 6">
-          <div class="ml-4">
-            <h3 class="text-xl font-semibold">Client 6</h3>
-            <p class="text-gray-300">Job Title</p>
-          </div>
-        </div>
-        <p class="mt-4 text-gray-300">"Y-Boost has streamlined our processes and delivered impressive results. The ROI has been remarkable."</p>
-      </div>
-      
+
+      <!-- Right Arrow -->
+      <button
+        class="text-white text-xl px-4 py-2 hover:bg-[#452355] rounded-full"
+        onclick="window.nextTestimonialSet()"
+      >
+        &#8594;
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.currentSet = 0;
+
+  window.showTestimonialSet = function (setIndex) {
+    const set1 = document.getElementById('testimonial-set-1');
+    const set2 = document.getElementById('testimonial-set-2');
+    const dots = document.querySelectorAll('.dot');
+
+    // Handle transition
+    set1.classList.add('opacity-0');
+    set2.classList.add('opacity-0');
+    setTimeout(() => {
+      set1.classList.add('hidden');
+      set2.classList.add('hidden');
+
+      dots.forEach(dot => dot.classList.replace('bg-white', 'bg-gray-400'));
+
+      if (setIndex === 0) {
+        set1.classList.remove('hidden');
+        set1.classList.remove('opacity-0');
+        dots[0].classList.replace('bg-gray-400', 'bg-white');
+      } else {
+        set2.classList.remove('hidden');
+        set2.classList.remove('opacity-0');
+        dots[1].classList.replace('bg-gray-400', 'bg-white');
+      }
+
+      window.currentSet = setIndex;
+    }, 500); // Ensure this matches the transition duration
+  };
+
+  window.nextTestimonialSet = function () {
+    const nextSet = window.currentSet === 0 ? 1 : 0;
+    window.showTestimonialSet(nextSet);
+  };
+
+  window.prevTestimonialSet = function () {
+    const prevSet = window.currentSet === 0 ? 1 : 0;
+    window.showTestimonialSet(prevSet);
+  };
+</script>
