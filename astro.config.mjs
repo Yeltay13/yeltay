@@ -5,7 +5,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://yeltay13.github.io",
-  base: "/y-boost/", // Ensure this matches your GitHub repo name
+  base: "/yeltay/", // Ensure this matches your GitHub repo name
   integrations: [tailwind(), icon()],
   vite: {
     build: {
